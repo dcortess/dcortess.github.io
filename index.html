@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio - Juega y Aprende</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+  <meta name="keywords" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
+
+  <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+<div id="content-wrapper">
+  <header class="header header--bg">
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#">JUEGA Y APRENDE</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a onclick="location.href='index.html';" style=cursor:pointer>INICIO</a></li>
+            <li><a onclick="location.href='juego.html';" style=cursor:pointer>JUGAR</a></li>
+            <li><a onclick="location.href='about.html';" style=cursor:pointer>SOBRE NOSOTROS</a></li> 
+            <li><a onclick="popup()" style=cursor:pointer>CONTACTO</a></li>
+          </ul>
+        </div>
+        <!-- POPUP -->
+        <div id="popup">
+          <div id="tancar" onclick="tancar()">x</div>
+          <div id="headerContactFront"><div id="txtCtc">CONTÁCTANOS</div></div>
+          <form action="/action_page.php">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" class="form-control" id="nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="tlf">Telefono:</label>
+            <input type="text" class="form-control" id="tlf">
+          </div>
+          <div class="form-group">
+            <label for="msj">Mensaje:</label>
+            <textarea type="text" class="form-control" id="msj"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default" id="enviar">ENVIAR</button>
+        </form>
+        </div>
+        <!-- FI POPUP -->
+      </nav>
+      <div class="header__content text-center">
+        <h1 class="header__content__title">BIENVENIDOS A JUEGA Y APRENDE</h1>
+        <ul class="header__content__sub-title">
+          <li>MULTITUD DE JUEGOS DIDÁCTICOS PARA LOS MÁS PEQUEÑOS<span class="padding"></span></li>
+        </ul>
+        <a class="header__button" onclick="location.href='base/juego.html';" style=cursor:pointer>¿QUIERES JUGAR? PULSA AQUI</a>
+      </div>
+      <div class="social-icon pull-right">
+      </div>
+    </div>
+  </header>
+  <section class="service">
+    <div class="container">
+      <div class="page-section">
+        <h2 class="page-section__title">PREGUNTAS FRECUENTES</h2>
+        <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
+        <p class="page-section__paragraph">A continuación, os damos respuesta a muchas de las preguntas más frecuentes que recibimos mediante el formulario de contacto, con la finalidad de ahorrar vuestro tiempo. </p>
+        <div class="row gutters-70">
+          <div class="col-md-4">
+            <div class="thumbnail text-center">
+        <img src="assets/images/logo-pregunta.png" alt="">
+              <h4 class="service__single-section__title">¿Qué es Juega Y Aprende?</h4>
+              <p class="service__single-section__paragraph">Juega Y Aprende es un portal online orientado a los juegos educativos con el objetivo de reforzar y afianzar los conocimientos básicos de los niños entre 2 y 6 años. </p>
+            </div>
+          </div>
+      
+          <div class="col-md-4">
+            <div class="thumbnail text-center">
+        <img src="assets/images/logo-pregunta.png" alt="">
+              <h4 class="service__single-section__title">¿Cuáles son los precios?</h4>
+              <p class="service__single-section__paragraph">No necesitas efectuar un pago para acceder a nuestros juegos, ¡Juega Y Aprende es completamente gratis! </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail text-center">
+        <img src="assets/images/logo-pregunta.png" alt="">
+              <h4 class="service__single-section__title">No puedo ingresar a los juegos</h4>
+              <p class="service__single-section__paragraph">Para esto es importante determinar el dispositivo utilizado. Si es una PC o laptop, te aconsejamos utilizar el navegador de Chrome. Si tienes un bloqueador de anuncios deber seguir las instrucciones para incluirnos en la navegación. Si accedes desde un móvil, el funcionamiento de la plataforma dependerá del procesador de tu equipo y velocidad de Internet o datos. </p>
+            </div>
+          </div>
+      <div class="col-md-4">
+            <div class="thumbnail text-center">
+        <img src="assets/images/logo-pregunta.png" alt="">
+              <h4 class="service__single-section__title">¿Cómo descargo los juegos?</h4>
+              <p class="service__single-section__paragraph">Nuestros juegos están diseñados para funcionar en cualquier dispositivo con conexión a Internet, por lo tanto, no pueden descargarse para uso offline. </p>
+            </div>
+          </div>
+      <div class="col-md-4">
+            <div class="thumbnail text-center">
+        <img src="assets/images/logo-pregunta.png" alt="">
+              <h4 class="service__single-section__title">¿Está Juega Y Aprende basado en una investigación educativa?</h4>
+              <p class="service__single-section__paragraph">Árbol ABC ha sido diseñado por un equipo de pedagogos cada uno con maestría en educación infantil. Nuestro material didáctico está diseñado siguiendo los más destacados modelos de educación infantil y está nivelado y secuenciado para asegurar resultados positivos en cualquier niño. Nuestros juegos educativos y libros interactivos combinan múltiples percepciones sensoriales para poder ser enfocados a los diferentes estilos de aprendizaje. </p>
+            </div>
+          </div>
+      <div class="col-md-4">
+            <div class="thumbnail text-center">
+        <img src="assets/images/logo-pregunta.png" alt="">
+              <h4 class="service__single-section__title">¿Qué dispositivos y sistema operativo requiere Juega Y Aprende para funcionar correctamente?</h4>
+              <p class="service__single-section__paragraph">Nuestra plataforma funciona en cualquier dispositivo con conexión a Internet y es compatible con los siguientes navegadores: Safari, Firefox y Chrome. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer footer--bg">
+    <div class="container text-center">
+      <h1 class="footer__title">JUEGA Y APRENDE</h1>
+      <ul class="footer__contact-information">
+        <li><a href="tel:5555555555"><i class="material-icons">phone</i> (+34) 666 45 78 12</a></li>
+        <li><a href="mailto:sshariar458@gmail.com"><i class="material-icons">email</i> contacto@juegayaprende.com</a></li>
+      </ul>
+    </div>
+    <hr style="border: 0;border-top: 1px solid #525B60;display:block;margin-top: 40px;">
+    <div class="container text-center">
+      <div class="social-icon">
+      </div>
+      <p class="footer__paragraph">Copyright &copy; 2020 Juega y Aprende , All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+  <script src="assets/jquery/jquery-3.2.1.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/mixitup.js"></script>
+
+  <script>
+    $('a').click(function(e)
+      {
+        e.preventDefault();
+      });
+
+    // calling mixitup
+    var mixer = mixitup(".portfolio");
+  </script>
+</body>
+</html>  

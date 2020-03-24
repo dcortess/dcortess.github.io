@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre nosotros - Juega y Aprende</title>
+  <meta name="keywords" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
+  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
+
+  <link rel="stylesheet" href="assets/fonts/flat-icon/flaticon.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script type="text/javascript" src="js/popup.js"></script>
+</head>
+<body>
+<div id="content-wrapper">
+<header class="header header--bg">
+    <div class="container">
+      <nav class="navbar">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" onclick="location.href='index.html';" style=cursor:pointer>JUEGA Y APRENDE</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a onclick="location.href='index.html';" style=cursor:pointer>INICIO</a></li>
+            <li><a onclick="location.href='juego.html';" style=cursor:pointer>JUGAR</a></li>
+            <li><a onclick="location.href='about.html';" style=cursor:pointer>SOBRE NOSOTROS</a></li> 
+            <li><a onclick="popup()" style=cursor:pointer>CONTACTO</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+     <!-- POPUP -->
+        <div id="popup">
+          <div id="tancar" onclick="tancar()">x</div>
+          <div id="headerContactFront"><div id="txtCtc">CONTÁCTANOS</div></div>
+          <form action="/action_page.php">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" class="form-control" id="nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="tlf">Telefono:</label>
+            <input type="text" class="form-control" id="tlf">
+          </div>
+          <div class="form-group">
+            <label for="msj">Mensaje:</label>
+            <textarea type="text" class="form-control" id="msj"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default" id="enviar">ENVIAR</button>
+        </form>
+        </div>
+        <!-- FI POPUP -->
+  </header>
+	<section class="about">
+		<div class="container about__container--narrow">
+		  <div class="page-section">
+			<h2 class="page-section__title">SOBRE NOSOTROS</h2>
+			  <img class="page-section__title-style" src="assets/images/title-style.png" alt="">
+			  <p class="page-section__paragraph">Esta página esta realizada por David Cortés i Albert Pijuan, estudiantes del grado universitario Técnicas de Interacción Digital y de Computación impartido por la Universitat de Lleida (UdL).</p>
+			  <div class="row gutters-80">
+				<div class="col-md-4">
+				  <div class="about__image">
+					<img src="assets/images/about-me-image-david.png" alt="">
+				  </div>
+				</div>
+				<div class="col-md-8 about__content">
+				  <p class="about__description">Es un chico muy alegre y educado, comprometido con su trabajo y siempre dispuesto a ayudar a quienes se lo piden. Le encanta ir al cine cuando tiene tiempo libre y, sobre todo, viajar.</p>
+				  <div class="row row--margin-top">
+					<div class="col-md-4">
+					  <p class="about__bio"><strong>NOMBRE :</strong> David Cortés</p>
+					  <p class="about__bio"><strong>EDAD :</strong> 19</p>
+					</div>
+					<div class="col-md-4">
+					  <p class="about__bio"><strong>OCUPACIÓN :</strong> Estudiante</p>
+					  <p class="about__bio"><strong>POBLACIÓN :</strong> Cervera, Lleida</p>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-md-4">
+					  <a class="button button--colorful button--margin" onclick="location.href='https://www.instagram.com/dcortees';" style=cursor:pointer><i class='fab fa-instagram' style='font-size:20px;position: relative;left: -30px'></i> INSTAGRAM</a>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			  <div class="row gutters-80">
+				<div class="col-md-4">
+				  <div class="about__image">
+					<img src="assets/images/about-me-image-albert.png" alt="">
+				  </div>
+				</div>
+				<div class="col-md-8 about__content">
+				  <p class="about__description">Le gusta dedicar su tiempo libre a la pintura, aunque a veces se le complica la realización de esta tarea por los deportes que practica. Al jubilarse le gustaría aprender mosaiquismo y dedicarse a escribir.</p>
+				  <div class="row row--margin-top">
+					<div class="col-md-4">
+					  <p class="about__bio"><strong>NOMBRE :</strong> Albert Pijuan</p>
+					  <p class="about__bio"><strong>EDAD :</strong> 22</p>
+					</div>
+					<div class="col-md-4">
+					  <p class="about__bio"><strong>OCUPACIÓN :</strong> Estudiante</p>
+					  <p class="about__bio"><strong>LOCATION :</strong> Cervera, Lleida</p>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-md-4">
+					  <a class="button button--colorful button--margin" onclick="location.href='https://www.instagram.com/holasoypiju';" style=cursor:pointer><i class='fab fa-instagram' style='font-size:20px;position: relative;left: -30px'></i> INSTAGRAM</a>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  </div>
+		</div>
+	</section>
+</div>
+  <footer class="footer footer--bg">
+    <div class="container text-center">
+      <h1 class="footer__title">JUEGA Y APRENDE</h1>
+      <ul class="footer__contact-information">
+        <li><a href="tel:5555555555"><i class="material-icons">phone</i> (+34) 666 45 78 12</a></li>
+        <li><a href="mailto:sshariar458@gmail.com"><i class="material-icons">email</i> contacto@juegayaprende.com</a></li>
+      </ul>
+    </div>
+    <hr style="border: 0;border-top: 1px solid #525B60;display:block;margin-top: 40px;">
+    <div class="container text-center">
+      <div class="social-icon">
+      </div>
+      <p class="footer__paragraph">Copyright &copy; 2020 Juega y Aprende , All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/jquery/jquery-3.2.1.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/mixitup.js"></script>
+
+  <script>
+    $('a').click(function(e)
+      {
+        e.preventDefault();
+      });
+
+    // calling mixitup
+    var mixer = mixitup(".portfolio");
+  </script>
+  <script>
+function abrir() {
+open('contact.html','','top=100,left=700,width=500,height=740') ;
+}
+</script>
+</body>
+</html>  
