@@ -8,7 +8,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 
 class Object{
-	constructor(g,x,y,t){
+	constructor(id,g,x,y,t){
+		this._id = id;
 		this._g = g; // game
 		this._x = x;
 		this._y = y;
@@ -16,6 +17,7 @@ class Object{
 		this._v = false; // is visible
 		this._u = false; // usable, can be taken
 		this._k = false; // killable
+		this._prop = []; // Properties, free to use
 	}
 	isVisible(){
 		return this._v;
@@ -32,14 +34,29 @@ class Object{
 	}
 
 	die(){
-
+		CustomGame.com(
+			"dieObject",
+			this,
+			[
+				CustomGame.getCellX(this._x),
+				CustomGame.getCellY(this._y)
+			]
+		);
 	}
 
 	isUsable(){
 		return this._u;
 	}
 
-	touch(){}
+	touch(){
+			CustomGame.com(
+				"touchItem",
+				this,[
+					CustomGame.getCellX(this._x),
+					CustomGame.getCellY(this._y)
+				]
+			);
+	}
 	use(){}
 
 	isKillable(){
@@ -56,12 +73,27 @@ class Object{
 	isWall(){
 		return false;
 	}
+	setX(x){
+		this._x=x;
+	}
+	setY(y){
+		this._y=y;
+	}
+	setProp(id,p){
+		this._prop[id]=p;
+	}
+	getProp(id){
+		return this._prop[id];
+	}
+	delProp(id){
+		this._prop[id]=null;
+	}
 }
 
 class movingObject extends Object{
-	constructor(g,x,y,a,t){
-		super(g,x,y,t);
-		this._a = a; // Anle
+	constructor(id,g,x,y,a,t){
+		super(id,g,x,y,t);
+		this._a = a; // Angle
 		this._s = this._g._m._gridSize/2; // Speed
 	}
 
@@ -82,8 +114,8 @@ class movingObject extends Object{
 }
 
 class movingObjectKill extends movingObject{
-	constructor(g,x,y,a,t,h){
-		super(g,x,y,a,t);
+	constructor(id,g,x,y,a,t,h){
+		super(id,g,x,y,a,t);
 		this._hurting=h;
 	}
 
@@ -126,45 +158,43 @@ class movingObjectKill extends movingObject{
 }
 
 class usableItem extends Object{
-	constructor(g,x,y,t){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t){
+		super(id,g,x,y,t);
 		this._u = true;
 	}
 
 	touch(p){
-		super.touch(p);
-		this._g._m.remObject(this);
+		if(p.takeItem(this)){
+			super.touch(p);
+			this._g._m.remObject(this);
+		}
 	}
 
+
 	use(p){
-		
+
 	}
 }
 
 class usableItemShot extends usableItem{
-	constructor(g,x,y,t,h){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t,h){
+		super(id,g,x,y,t);
 		this._hurting=h;
 	}
 
 	touch(p){
-		//super.touch(p);
-		p.takeItem(this);
+		super.touch(p);
 	}
 
 	use(p){
-		this._g._m.addObject(new movingObjectKill(this._g,Math.floor(p._x),Math.floor(p._y),p._angle,this._t,this._hurting));
+		this._g._m.addObject(new movingObjectKill(p.id,this._g,Math.floor(p._x),Math.floor(p._y),p._angle,this._t,this._hurting));
 	}
 }
 
-class usableItemShotDefault{
-	constructor(){}
-	use(){}
-}
 
 class Portal extends usableItem{
-	constructor(g,x,y,t,roomID){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t,roomID){
+		super(id,g,x,y,t);
 		this._roomID=roomID;
 	}
 
@@ -179,8 +209,8 @@ class Portal extends usableItem{
 }
 
 class killableItem extends Object{
-	constructor(g,x,y,t){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t){
+		super(id,g,x,y,t);
 		this._k = true;
 	}
 
@@ -190,9 +220,25 @@ class killableItem extends Object{
 	}
 }
 
+class killableItemHurts extends killableItem{
+	constructor(id,g,x,y,t,h){
+		super(id,g,x,y,t);
+		this._hurts = h;
+	}
+
+	die(h){
+		if(this._itHurts(h)){
+			super.die(h);
+		}
+	}
+	_itHurts(h){
+		return h==this._hurts;
+	}
+}
+
 class Profesor extends killableItem{
-	constructor(g,x,y,t,live,hurts){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t,live,hurts){
+		super(id,g,x,y,t);
 		this._TotalLive=live;
 		this._CurrentLive=live;
 		this._hurts = hurts;
@@ -215,8 +261,8 @@ class Profesor extends killableItem{
 }
 
 class explosiveObject extends killableItem{
-	constructor(g,x,y,t){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t){
+		super(id,g,x,y,t);
 	}
 
 	die(h){
@@ -226,8 +272,8 @@ class explosiveObject extends killableItem{
 }
 
 class Sprite extends Object{
-	constructor(g,x,y,t){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t){
+		super(id,g,x,y,t);
 		this._c = 0; // Count for texture frame
 		this._tt = 4; // aux
 		this._f = 0; //aux
@@ -254,8 +300,8 @@ class Sprite extends Object{
 }
 
 class SpriteBucle extends Sprite{
-	constructor(g,x,y,t){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t){
+		super(id,g,x,y,t);
 	}
 
 	run(){
@@ -275,8 +321,8 @@ class SpriteBucle extends Sprite{
 }
 
 class NPC extends Sprite{
-	constructor(g,x,y,t,normalFrameStart,normalFrameEnd,endFrameStart,endFrameEnd,hurts){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t,normalFrameStart,normalFrameEnd,endFrameStart,endFrameEnd,hurts){
+		super(id,g,x,y,t);
 		this._fs=normalFrameStart;
 		this._fe=normalFrameEnd;
 		this._efs=endFrameStart;
@@ -284,6 +330,8 @@ class NPC extends Sprite{
 		this._k=true; // killableItem -> does sprite extend from it?
 		this._end = false;//
 		this._hurts = hurts;
+		this._c = this._fs;
+		this._f = 0;
 	}
 
 	run(){
@@ -293,8 +341,10 @@ class NPC extends Sprite{
 	die(h){
 		if(this._itHurts(h)){
 			if(this._end){
-				super.die(h);
+			//	super.die(h);
 			}else{
+				//super.die(h);
+				// It will die when the animation ends (_framesEnd)
 				this._end = true;
 				this._c = this._efs;
 				this._fe = this._efe;
@@ -309,6 +359,7 @@ class NPC extends Sprite{
 
 	_framesEnd(){
 		if(this._end){
+			super.die();
 			super._framesEnd();
 		}else{
 			this._c = this._fs;
@@ -318,8 +369,8 @@ class NPC extends Sprite{
 }
 
 class Wall extends Object{
-	constructor(g,x,y,t){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t){
+		super(id,g,x,y,t);
 	}
 
 	isWall(){
@@ -332,8 +383,8 @@ class Wall extends Object{
 }
 
 class breakableWall extends Wall{
-	constructor(g,x,y,t){
-		super(g,x,y,t);
+	constructor(id,g,x,y,t){
+		super(id,g,x,y,t);
 		this._k = true;
 	}
 
@@ -344,6 +395,34 @@ class breakableWall extends Wall{
 	die(){
 		super.die();
 		this._g._m.remObject(this);
-		this._g.addExplosion(this._x,this._y);
+		//this._g.addExplosion(this._x,this._y);
+		// com arguments
+		// "breakWall"
+		// object broked
+		// x cell, y cell
+		//CustomGame.com(
+		//	"breakWall",
+		//	this,
+		//	[
+		//		CustomGame.getCellX(this._x),
+		//		CustomGame.getCellY(this._y)
+		//	]
+		//);
+	}
+}
+
+class breakableWallHurts extends breakableWall{
+	constructor(id,g,x,y,t,h){
+		super(id,g,x,y,t);
+		this._hurts = h;
+	}
+
+	die(h){
+		if(this._itHurts(h)){
+			super.die();
+		}
+	}
+	_itHurts(h){
+		return h==this._hurts;
 	}
 }

@@ -27,7 +27,7 @@ class DATA{
 
 let aux=`
 <h2>How to play:<h2>
-<p>[p] pause/resume</p>
+<p>[m] show/hide menu</p>
 <p>[a] left</p>
 <p>[d] right</p>
 <p>[w] forward </p>

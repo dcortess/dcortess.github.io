@@ -13,6 +13,7 @@ class Overlay{
 		this._div = document.createElement("div");
 		
 		this._ini(e);
+		this._savedContent=null;
 	}
 
 	_ini(e){
@@ -59,6 +60,15 @@ class Overlay{
 	setContent(c){
 		this._div.innerHTML = c;
 	}
+	getContent(){
+		return this._div.innerHTML;
+	}
 
+	saveContent(){
+		this._savedContent=this.getContent();
+	}
+	restoreContent(){
+		this._div.innerHTML=this._savedContent;
+	}
 
 }

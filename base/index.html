@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RayCasting</title>
+		<meta charset="utf-8">
+		<!-- *************** -->
+		<!--  Config   RC    -->
+		<!-- *************** -->
+
+		<script type="text/javascript" src="app/js/rce/SpeechToText.js"></script>
+		<script type="text/javascript" src="app/js/rce/Game.js"></script>
+		<script type="text/javascript" src="app/js/rce/BaseGame.js"></script>
+		<script type="text/javascript" src="app/js/CustomGame.js"></script>
+		<script type="text/javascript" src="app/js/rce/Overlay.js"></script>
+		<script type="text/javascript" src="app/js/rce/Player.js"></script>
+		<script type="text/javascript" src="app/js/rce/Map.js"></script>
+		<script type="text/javascript" src="app/js/rce/Background.js"></script>
+		<script type="text/javascript" src="app/js/rce/RCEngine.js"></script>
+		<script type="text/javascript" src="app/js/rce/Intersection.js"></script>
+		<script type="text/javascript" src="app/js/rce/Texture.js"></script>
+		<script type="text/javascript" src="app/js/rce/Object.js"></script>
+		<script type="text/javascript" src="app/js/rce/Room.js"></script>
+		<script type="text/javascript" src="app/js/rce/Map2dview.js"></script>
+		<script type="text/javascript" src="app/js/rce/Keyboard.js"></script>
+		<script type="text/javascript" src="app/js/rce/Mouse.js"></script>
+		<script type="text/javascript" src="app/js/rce/Data.js"></script>
+		<script type="text/javascript" src="app/js/CustomData.js"></script>
+		<script type="text/javascript" src="app/main.js"></script>
+		<style type="text/css">
+@font-face {
+	font-family: 'slkscre';
+	src: url('app/fonts/slkscre.ttf');
+}
+* {
+	margin:0; padding:0; font-family:'slkscre';color:green;font-size:16px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;user-select: none; 
+	overflow:auto;
+}
+		html, body { width:100%; height:100%; }
+		p,h1,h2,h3,h4,h5,h6{
+			margin:0.5em;
+				text-align:center;
+		}
+
+		#info{
+			border:black solid 5px;
+			width:790px;
+			height:200px;
+		}
+
+		#rc{
+			top:0px;
+			left:0px;
+		}
+		#rcinventary{
+			position:fixed;
+			top:0px;
+			width:800px;
+			height:80px;
+		}
+		#rcinventary>table{
+			table-layout:fixed;
+			width:800;
+			height:80px;
+		}
+		td{
+			width:67px;
+			overflow:hidden;
+		}
+		.selected{
+			border:black solid 2px;
+		}
+		.available{
+			border:gray dotted 1px;
+		}
+
+		</style>
+		<!-- *************** -->
+		<!-- Fin Config RC   -->
+		<!-- *************** -->
+
+		<!-- *************** -->
+		<!--  Custom CSS     -->
+		<!-- *************** -->
+		<link rel="stylesheet" type="text/css" href="app/css/custom.css">
+	</head>
+	<body>
+
+		<!-- *************** -->
+		<!--  Config   RC    -->
+		<!-- *************** -->
+		<canvas id="rc"  width ="800" height="600"></canvas>
+		<div id="rcinventary"> 
+			<table>
+				<tr>
+					<td id="rctableid1"></td>
+					<td id="rctableid2"></td>
+					<td id="rctableid3"></td>
+					<td id="rctableid4"></td>
+					<td id="rctableid5"></td>
+					<td id="rctableid6"></td>
+					<td id="rctableid7"></td>
+					<td id="rctableid8"></td>
+					<td id="rctableid9"></td>
+					<td id="rctableid0"></td>
+				</tr>
+			</table>
+		</div>
+		<!-- <div id="info"> -->
+		<!-- 	<h2>How to play:<h2> -->
+		<!-- 			<p>[a] left</p> -->
+		<!-- 			<p>[d] right</p> -->
+		<!-- 			<p>[w] forward </p> -->
+		<!-- 			<p>[s] backward</p> -->
+		<!-- 			<p>[mouse] look left/right</p> -->
+		<!-- 			<p>[mouse left click] fire</p> -->
+		<!-- </div> -->
+		<canvas id="rcMap2D" style="display: block;"></canvas>
+		<!-- <canvas id="miCanvas" style="display: block;"></canvas> -->
+		<!-- *************** -->
+		<!-- Fin Config RC   -->
+		<!-- *************** -->
+	</body>
+</html>

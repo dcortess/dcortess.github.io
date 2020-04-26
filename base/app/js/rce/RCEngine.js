@@ -5,7 +5,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+ */
 
 // RayCasting Engine
 // Origin (player)
@@ -19,15 +19,15 @@ class RCEngine{
 		this._fullScreen = fullScreen;
 		if(fullScreen){
 			this._c.width = window.innerWidth;
-        	this._c.height = window.innerHeight;
-        }
+			this._c.height = window.innerHeight;
+		}
 		this._ctx = this._ctx = this._c.getContext("2d");
 		this._w = this._c.width;
 		this._h = this._c.height;
 		this._o = null; // Origin
 		this._v2d = null;// Map 2D view
 		this._tx=[]; // Textures
-		this._eagle = 1250; // How far I can see !
+		//this._eagle = 1250; // How far I can see !
 		this._dov = Math.max(this._c.width,this._c.height)*4;// Distance of view
 
 		this.ini();
@@ -46,6 +46,10 @@ class RCEngine{
 		this._bestInt = null; // Intersection where the ray hits originally. To get coordinate when drawing texture
 		this._hitObj = []; // Objects hit on the cast
 		this._zindex = [] // save zindex of each ray casted on the canvas for positioning objects
+
+		//this.setGradientCeiling('lightblue','red');
+		//this.setImageBackground("app/img/interior360.jpg");
+		//this.setGradientGround('gray','lightgray');
 
 	}
 
@@ -72,9 +76,9 @@ class RCEngine{
 	}
 	// raycast
 	update(){
-		
+
 		this._ctx.clearRect(0, 0, this._c.width, this._c.height);
-		
+
 		let aux = ((this._o._angle-(this._o.getFOV()/2)));
 		if(aux<0){
 			aux=aux+360;
@@ -94,25 +98,25 @@ class RCEngine{
 			this.shotRay(i);
 		}
 
-				// Only draws where there is nothing drawed
+		// Only draws where there is nothing drawed
 		this._ctx.globalCompositeOperation = 'destination-over';
 
-		this.drawGround();
-	 	this.drawCeiling();
+		this._ground.draw();
+		this._ceiling.draw(this._o._angle);
 
-	 	this._ctx.globalCompositeOperation = 'source-over';
+		this._ctx.globalCompositeOperation = 'source-over';
 
-	 	this.drawObjects();
- 		this._hitObj=[]; // Remove objects from array
+		this.drawObjects();
+		this._hitObj=[]; // Remove objects from array
 	}
 
 	drawObjects(){
 		for(let cont=this._hitObj.length-1;cont>=0;cont--){
-	 		let o = this._hitObj[cont];
-		 	if(o.isVisible()){
-			 	let bestD = this.getDistance(this._o._x,this._o._y,o._x,o._y);
+			let o = this._hitObj[cont];
+			if(o.isVisible()){
+				let bestD = this.getDistance(this._o._x,this._o._y,o._x,o._y);
 
-//			 	let dpp = (this._c.width/2) / Math.tan((this._o.getFOV()/2)*Math.PI/180); //277
+				//			 	let dpp = (this._c.width/2) / Math.tan((this._o.getFOV()/2)*Math.PI/180); //277
 				let psh = this._m._gridSize / bestD * this._dpp;
 				let cpp = this._c.height/2;
 
@@ -133,38 +137,39 @@ class RCEngine{
 				}catch(e){
 					console.log(e);
 				}
-					let alpha = 1-bestD/this._eagle/3;
-					this._ctx.globalAlpha = alpha;
-					for(let i=0;i<psh;i++){
-						if(bestD<this._zindex[Math.floor(i+x)]){
-							try{
+				//let alpha = 1-bestD/this._eagle/3;
+				//this._ctx.globalAlpha = alpha;
+				for(let i=0;i<psh;i++){
+					if(bestD<this._zindex[Math.floor(i+x)]){
+						try{
 							this._ctx.drawImage(o.getFrame(),step*i,0,step,o.getFrame().width,i+x,cpp+(psh/2),1,-psh);
-							}catch(e){
-								// Fixed --> When explosion .. fails but not crash
-								console.log(e);
-							}
+						}catch(e){
+							// Fixed --> When explosion .. fails but not crash
+							console.log(e);
 						}
 					}
-					this._ctx.globalAlpha = 1;
-	 			o.setVisible(false,this._hitObj);
-	 		}
- 		}
+				}
+				//this._ctx.globalAlpha = 1;
+				o.setVisible(false,this._hitObj);
+			}
+		}
 	}
 
 	drawGround(){
 		var my_gradient=this._ctx.createLinearGradient(this._c.width/2,this._c.height/2,this._c.width/2,this._c.height);
 		my_gradient.addColorStop(0,'black');
-		my_gradient.addColorStop(1,'darkgray');
+		my_gradient.addColorStop(1,this._groundColor);
 		this._ctx.fillStyle=my_gradient;
-	    this._ctx.fillRect(0,this._c.height/2,this._c.width,this._c.height/2);
+		this._ctx.fillRect(0,this._c.height/2,this._c.width,this._c.height/2);
 	}
 
 	drawCeiling(){
-	    var my_gradient=this._ctx.createLinearGradient(this._c.width/2,0,this._c.width/2,this._c.height/2);
-		my_gradient.addColorStop(0,'darkgray');
+		var my_gradient=this._ctx.createLinearGradient(this._c.width/2,0,this._c.width/2,this._c.height/2);
+		my_gradient.addColorStop(0,this._ceilingColor);
 		my_gradient.addColorStop(1,'black');
 		this._ctx.fillStyle=my_gradient;
-	    this._ctx.fillRect(0,0,this._c.width,this._c.height/2);
+		this._ctx.fillRect(0,0,this._c.width,this._c.height/2);
+		//this._ctx.drawImage("app/img/wall2.png",0,0,this._c.width,this._c.height/2);
 	}
 
 	// Shot Ray ;) --> find a wall or the end of the map
@@ -190,7 +195,9 @@ class RCEngine{
 
 		if(bestD<this._dov){
 			// Show field of view
-			this._v2d.drawLine((this._o.getFOV()/this._w)*i-this._o.getFOV()/2,bestD,"#DCDCDC",0.3);
+			if(this._v2d){
+				this._v2d.drawLine((this._o.getFOV()/this._w)*i-this._o.getFOV()/2,bestD,"#DCDCDC",0.3);
+			}
 			this.drawRayWall(bestD,i);
 		}
 	}
@@ -235,15 +242,29 @@ class RCEngine{
 		let psh = this._m._gridSize / bestD * this._dpp;
 		// Center of the projection plane is 100 // canvas height/2 --> center is 50
 		let cpp = this._c.height/2;
-		
+
 		if(this._bestInt.getWallType().isWall()){
-			let alpha = 1-bestD/this._eagle;
-			this._ctx.globalAlpha = alpha;
-			if(bestD<this._eagle){
-			this._ctx.drawImage(this._bestInt.getWallType()._t.get(),Math.floor(this._bestInt.getWallHitOffset())%this._m._gridSize,0,1,this._m._gridSize,this._w-offGr,cpp+(psh/2),1,-psh);
-			}
+			//let alpha = 1-bestD/this._eagle;
+			//this._ctx.globalAlpha = alpha;
+			//if(bestD<this._eagle){
+				this._ctx.drawImage(this._bestInt.getWallType()._t.get(),Math.floor(this._bestInt.getWallHitOffset())%this._m._gridSize,0,1,this._m._gridSize,this._w-offGr,cpp+(psh/2),1,-psh);
+			//}
 			this._zindex[this._w-offGr]=bestD;
-			this._ctx.globalAlpha = 1;
+			//this._ctx.globalAlpha = 1;
 		}
+	}
+
+
+	//this._ceiling=new GradientCeiling(this._ctx,this._w,this._h,'lightblue','red');
+	setGradientCeiling(color1,color2){
+		this._ceiling=new GradientCeiling(this._ctx,this._w,this._h,color1,color2);
+	}
+	//this._ground=new GradientGround(this._ctx,this._w,this._h,'gray','light'red'gray');
+	setGradientGround(color1,color2){
+		this._ground=new GradientGround(this._ctx,this._w,this._h,color1,color2);
+	}
+	//this._ceiling=new ImageBackground(this._ctx,this._w,this._h,"app/img/interior360.jpg");
+	setImageBackground(url){
+		this._ceiling=new ImageBackground(this._ctx,this._w,this._h,url);
 	}
 }

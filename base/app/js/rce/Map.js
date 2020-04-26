@@ -86,7 +86,7 @@ class Map{
 			return true;
 		}
 	}
-	
+
 	remObject(o){
 		let i = this._objs.indexOf(o);
 		if(i>=0){
@@ -125,4 +125,13 @@ class Map{
 		return true;
 	}
 
+	// Utility 
+
+	getGridSize(){
+		return this._gridSize;
+	}
+
+	getCell(n){
+		return Math.floor(n/this._gridSize);
+	}
 }

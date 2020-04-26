@@ -12,6 +12,7 @@ class Keyboard{
 		this._kp = []; // Keypressed
 		window.addEventListener("keydown", () => this.keypress(window.event));
 		window.addEventListener("keyup", () => this.keyup(window.event));
+		this._sr=new SpeechToText();
 	}
 
 	keypress(e){
@@ -46,6 +47,11 @@ class pausedKeyboard extends Keyboard{
 	keypress(e){
 		if(e.key==this._pk){
 			this._kp[0] = e.key;
+			//CustomGame.com('restoreFromPause',null,[]);
+		}
+		if(e.key=='h'){
+			this._sr.startDictation();
+			this._kp = []; 
 		}
 	}
 
