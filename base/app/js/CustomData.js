@@ -31,9 +31,9 @@ let aux=`
 1    2  e      2    g    g2    1
 1    2e   e  2 2  2  g  g 2    1
 1    222222222 2  222222222    1
-1    2         2          2    1
-1    2         2          2    1
-1    2       2    2       2    1
+1    2         2    77777 2    1
+1    2         2         72    1
+1    2       2    2 77777 2    1
 1    2222222222222222222222    1
 1                              1
 1                              1
@@ -52,7 +52,8 @@ aux=`
 		this.set('welcome',aux);
 aux=`
 <h1>Enhorabuena</h1>
-<h2>Has completado tu misión</h2>
+<h2>Los huevos estan a salvo</h2>
+<h2>Dirigete a la puerta de detras tuyo</h2>
 `;
 		this.set('missionCompleted',aux);
 aux=`
@@ -63,22 +64,30 @@ aux=`
 			<hr/>
 `;
 		this.set('missionSkull',aux);
+aux=`
+<h1>Esta es la zona de las gallinas</h1>
+<p>Recoje los huevos y dejalos al fondo del siguiente establo</p>
+			<hr/>
+<h2>Para recojerlos pasa por encima</h2>
+			<hr/>
+<h2>Para soltarlos pulsa "i"</h2>
+			<hr/>
+`;
+		this.set('misionGallinas',aux);
 
 aux=`
-<h1>Utiliza el poder de la calavera</h1>
-<p>Hay que buscar el lugar al que pertenece la calavera</p>
-			</p><img src='app/img/wall6.png'/></p>
-<h2>Busca este símbolo y deposita la calavera a sus pies</h2>
-			<hr/>
-<h2>Para dejar un objeto pulsa la tecla i</h2>
+<h1>Ya tienes los huevos</h1>
+<p>Recuerda dejarlos al fondo del siguiente establo</p>
+			</p><img src='app/img/huevos.png'/></p>
+<h2>Para dejarlos usa "i"</h2>
 			<hr/>
 `;
 		this.set('missionSkull2',aux);
 aux=`
-<h1>Salir del laberinto</h1>
-<p>Utiliza las bombas para salir del laberinto</p>
-			<p><img src='app/img/bomb.png'/></p>
-<h2>Esto va a ser divertido ...</h2>
+<h1>¡Has conseguido una llave!</h1>
+<p>Utiliza las llaves para abrir puertas</p>
+			<p><img src='app/img/llave.png'/></p>
+<h2>Click izquierdo mientras mires a una puerta</h2>
 `;
 		this.set('missionKill',aux);
 
@@ -124,6 +133,21 @@ aux=`
 			<hr/>
 `;
 		this.set('multipleObjects',aux);
+aux=`
+<h1>Puerta encontrada</h1>
+<p>Las puertas necesitan una llave para abrirse</p>
+<p>Busca la llave por fuera de la granja</p>
+			<hr/>
+<h2>Asegurate de apretar la tecla "2" antes de pasar por ella</h2>
+			<hr/>
+<h2>Cada numero se representa con un cuadrado en la parte superior de la pantalla</h2>
+			<hr/>
+<h2>Cambia de posición con la tecla del número correspondiente</h2>
+			<hr/>
+<h2>Luego click izquiero para usarlo</h2>
+			<hr/>
+`;
+		this.set('puertaEncontrada',aux);
 aux=`
 <h1>Granjero Juanito</h1>
 <p>Te doy la bienvenida a mi granja. Para comenzar deberas</p>

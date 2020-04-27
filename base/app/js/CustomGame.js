@@ -37,9 +37,9 @@ class CustomGame extends BaseGame{
 				if(
 					obj._id=="skull"
 					&&
-					par[0]==16
+					par[0]==24
 					&&
-					par[1]==22
+					par[1]==14
 				)
 				{
 					CustomGame.showMessage('missionCompleted');
@@ -96,24 +96,26 @@ class CustomGame extends BaseGame{
 				if(
 					CustomGame.msgMultipleInventory==false
 					&&
-					par[0]==3
+					par[0]==16
 					&&
-					par[1]==4
+					par[1]==15
 				){
 					CustomGame.msgMultipleInventory=true
-					CustomGame.createBreakableWall("killablewall",3,1,"app/img/wall3.png","mataX");
-					CustomGame.addWallXY(3,6,1);
-					CustomGame.showMessage('multipleObjects');
+					//CustomGame.createBreakableWall("killablewall",3,1,"app/img/wall3.png","mataX");
+					//CustomGame.addWallXY(16,14,1);
+					CustomGame.showMessage('puertaEncontrada');
 				}
 				if(
-					CustomGame.msgObject1==false
+					CustomGame.msgMultipleInventory==false
 					&&
 					par[0]==18
 					&&
-					par[1]==4
+					par[1]==9
 				){
-					CustomGame.msgObject1=true;
-					CustomGame.showMessage('missionKill1');
+					CustomGame.msgMultipleInventory=true
+					//CustomGame.createBreakableWall("killablewall",3,1,"app/img/wall3.png","mataX");
+					//CustomGame.addWallXY(16,14,1);
+					CustomGame.showMessage('misionGallinas');
 				}
 				if(
 					CustomGame.turtle.completed==false

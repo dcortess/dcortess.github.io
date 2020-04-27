@@ -19,17 +19,20 @@ function main(){
 	//CustomGame.createUsableItemShot("shot",3,3,"app/img/bomb.png","mataX");
 	//CustomGame.createAnimatedItem("killable",18,4,"app/img/spriteBicho.png",1,1,20,10,2,[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"mataY",0,9,10,19);
 	CustomGame.createUsableItemShot("shot2",28,5,"app/img/objb.png","mataY");
-	//CustomGame.createBreakableWall("killablewall",14,9,"app/img/wall3.png","mataX");
-	CustomGame.createUsableItem("skull",3,9,"app/img/objc.png");
+	CustomGame.createBreakableWall("killablewall",15,15,"app/img/puerta.png","mataX");
+	//CustomGame.createUsableItem("skull",3,9,"app/img/objc.png");
 	CustomGame.createKillableItem("killable",20,5,"app/img/objf.png","mataY");
 	CustomGame.createKillableItem("killable",21,7,"app/img/objf.png","mataY");
 	CustomGame.createKillableItem("killable",21,6,"app/img/objf.png","mataY");
+	CustomGame.createUsableItemShot("shot",3,3,"app/img/llave.png","mataX");
+	CustomGame.createUsableItem("skull",22,11,"app/img/huevos.png");
 
 	//CustomGame.createAnimatedItem("npc1",9,6,"app/img/spriteBicho.png",1,1,20,10,2,[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"mataY",0,9,10,19);
 	//CustomGame.createAnimatedItem("npc2",10,9,"app/img/spriteBicho.png",1,1,20,10,2,[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"mataY",0,9,10,19);
 
 	CustomGame.createItem("turtle",17,3,"app/img/juanitocomida.png");
-	CustomGame.createItem("turtle",18,5,"app/img/juanitocomida.png");
+	CustomGame.createItem("turtle",18,5,"app/img/juanito.png");
+	CustomGame.createItem("turtle",18,9,"app/img/juanito.png");
 	CustomGame.showMessage('welcome');
 
 }
