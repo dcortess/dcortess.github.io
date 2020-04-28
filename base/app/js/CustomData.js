@@ -185,7 +185,7 @@ aux=`
 <button onclick="
  speechSynthesis.speak(new SpeechSynthesisUtterance('comida'));
 		">
-<img src='app/img/comida.png'/>
+<img src='app/img/pienso.png'/>
 			</button>
 			</p>
 </hr>
@@ -202,7 +202,7 @@ aux=`
 		this.set('selectAvailableStopMenu',aux);
 aux=`
 <h1>Enhorabuena, has completado la primera mision. Te espero en la granja.</h1>
-<p><img src='app/img/comida.png'/></p>
+<p><img src='app/img/pienso.png'/></p>
 `;
 		this.set('misionComidaCompletada',aux);
 aux=`
