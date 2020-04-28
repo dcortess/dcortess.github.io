@@ -431,7 +431,7 @@ class CustomGame extends BaseGame{
 					par[0] == CustomGame.turtle.speakTest
 				){
 					if(CustomGame.takeItem(CustomGame.getObject(CustomGame.turtle.objID))){
-						CustomGame.showMessage('turtleOK')
+						CustomGame.showMessage('misionComidaCompletada')
 						CustomGame.turtle.activated=false;
 						CustomGame.turtle.completed=true;
 						CustomGame.turtle.speak=false;

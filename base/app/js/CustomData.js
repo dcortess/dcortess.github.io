@@ -79,6 +79,8 @@ aux=`
 			<hr/>
 <h2>Para soltarlos pulsa "i"</h2>
 			<hr/>
+<h2>Asegurate de pulsar "3" antes de recojerlos</h2>
+			<hr/>
 `;
 		this.set('misionGallinas',aux);
 aux=`
@@ -88,6 +90,8 @@ aux=`
 <h2>Para recojerlo pasa por encima</h2>
 			<hr/>
 <h2>Para soltarlo pulsa "i"</h2>
+			<hr/>
+<h2>Asegurate de pulsar "5" antes de pasar recojerlo</h2>
 			<hr/>
 `;
 		this.set('misionCerdo',aux);
@@ -162,11 +166,7 @@ aux=`
 <p>Las puertas necesitan una llave para abrirse</p>
 <p>Busca la llave por fuera de la granja</p>
 			<hr/>
-<h2>Asegurate de apretar la tecla "2" antes de pasar por ella</h2>
-			<hr/>
-<h2>Cada numero se representa con un cuadrado en la parte superior de la pantalla</h2>
-			<hr/>
-<h2>Cambia de posición con la tecla del número correspondiente</h2>
+<h2>Asegurate de apretar la tecla "4" antes de pasar por ella</h2>
 			<hr/>
 <h2>Luego click izquiero para usarlo</h2>
 			<hr/>
@@ -201,15 +201,24 @@ aux=`
 `;
 		this.set('selectAvailableStopMenu',aux);
 aux=`
-<h1>Enhorabuena, has completado la primera mision. Te espero en la granja, pero antes deberas pulsar "m" para cerrar este dialogo y "2" para pasar a la segunda mision.</h1>
+<h1>Enhorabuena, has completado la primera mision. Te espero en la granja.</h1>
 <p><img src='app/img/comida.png'/></p>
 `;
-
+		this.set('misionComidaCompletada',aux);
 aux=`
 <h1>Nueva mision</h1>
 <p>¡Las ovejas estan hambrientas!</p>
 <p>Busca pasto por fuera de la granja.</p>
 			<hr/>
+<p>Tienes 10 posiciones de inventario:</p>
+			<hr/>
+<h2>1 2 3 4 5 6 7 8 9 0</h2>
+			<hr/>
+<h2>Cada posicón se representa con un cuadrado en la parte superior de la pantalla</h2>
+			<hr/>
+<h2>Asegurate de pulsar "2" antes de pasar por encima del pasto</h2>
+			<hr/>
+<h2>Sólo puedes tener un objeto por posición</h2>
 <h2>Pulsa m para abrir/cerrar esta pantalla</h2>
 			<hr/>
 `;
