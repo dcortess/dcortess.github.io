@@ -23,6 +23,9 @@ class CustomGame extends BaseGame{
 	static msgObject1=false;
 	static msgBomb=false;
 	static msgMultipleInventory=false;
+	static msgPuertaEncontrada=false;
+	static msgMisionGallinas=false;
+	static msgMisionCerdo=false;
 	static missionTurtle=false;
 	static turtleOK=false;
 	static turtle=new CustomMission("turtle",false,17,3,false,"comida");
@@ -42,7 +45,277 @@ class CustomGame extends BaseGame{
 					par[1]==14
 				)
 				{
-					CustomGame.showMessage('missionCompleted');
+					CustomGame.showMessage('missionCompleted1');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==6
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==6
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==6
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==7
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==7
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==7
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==8
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==8
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==8
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==9
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==9
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==9
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==10
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==10
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==10
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==11
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==11
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==11
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==12
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==12
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==12
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==13
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==13
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==13
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==14
+					&&
+					par[1]==5
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==14
+					&&
+					par[1]==6
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
+				}
+				if(
+					obj._id=="cerdo"
+					&&
+					par[0]==14
+					&&
+					par[1]==7
+				)
+				{
+					CustomGame.showMessage('missionCompleted2');
 				}
 				if(
 					obj._id==CustomGame.turtle.objID
@@ -61,6 +334,13 @@ class CustomGame extends BaseGame{
 					obj._id=="shot2"
 				){
 					CustomGame.showMessage('missionKill2');
+				}
+				if(
+					obj._id=="cerdo"
+				){
+					CustomGame.remWallXY(6,5);
+					CustomGame.remWallXY(7,5);
+					CustomGame.showMessage('missionSkull3');
 				}
 				if(
 					obj._id=="skull"
@@ -84,38 +364,40 @@ class CustomGame extends BaseGame{
 				break;
 			case 'playerPosition':
 				if(
-					CustomGame.msgBomb==false
-					&&
-					par[0]==22
-					&&
-					par[1]==9
-				){
-					CustomGame.msgBomb=true;
-					CustomGame.showMessage('missionBomb');
-				}
-				if(
-					CustomGame.msgMultipleInventory==false
+					CustomGame.msgPuertaEncontrada==false
 					&&
 					par[0]==16
 					&&
 					par[1]==15
 				){
-					CustomGame.msgMultipleInventory=true
+					CustomGame.msgPuertaEncontrada=true
 					//CustomGame.createBreakableWall("killablewall",3,1,"app/img/wall3.png","mataX");
 					//CustomGame.addWallXY(16,14,1);
 					CustomGame.showMessage('puertaEncontrada');
 				}
 				if(
-					CustomGame.msgMultipleInventory==false
+					CustomGame.msgMisionGallinas==false
 					&&
 					par[0]==18
 					&&
 					par[1]==9
 				){
-					CustomGame.msgMultipleInventory=true
+					CustomGame.msgMisionGallinas=true
 					//CustomGame.createBreakableWall("killablewall",3,1,"app/img/wall3.png","mataX");
 					//CustomGame.addWallXY(16,14,1);
 					CustomGame.showMessage('misionGallinas');
+				}
+				if(
+					CustomGame.msgMisionCerdo==false
+					&&
+					par[0]==13
+					&&
+					par[1]==13
+				){
+					CustomGame.msgMisionCerdo=true
+					//CustomGame.createBreakableWall("killablewall",3,1,"app/img/wall3.png","mataX");
+					//CustomGame.addWallXY(16,14,1);
+					CustomGame.showMessage('misionCerdo');
 				}
 				if(
 					CustomGame.turtle.completed==false

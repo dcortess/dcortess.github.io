@@ -31,9 +31,9 @@ let aux=`
 1    2  e      2    g    g2    1
 1    2e   e  2 2  2  g  g 2    1
 1    222222222 2  222222222    1
-1    2         2    77777 2    1
-1    2         2         72    1
-1    2       2    2 77777 2    1
+1    2    i i  2    77777 2    1
+1    2i        2         72    1
+1    2 i  i  2    2 77777 2    1
 1    2222222222222222222222    1
 1                              1
 1                              1
@@ -55,7 +55,14 @@ aux=`
 <h2>Los huevos estan a salvo</h2>
 <h2>Dirigete a la puerta de detras tuyo</h2>
 `;
-		this.set('missionCompleted',aux);
+		this.set('missionCompleted1',aux);
+aux=`
+<h1>Enhorabuena</h1>
+<h2>El cerdo ha vuelto a su establo</h2>
+<h2>Has superado todas las pruebas</h2>
+<h2>Juanito ha quedado muy contento con tu trabajo</h2>
+`;
+		this.set('missionCompleted2',aux);
 aux=`
 <h1>Algo está sucediendo</h1>
 <p>Se ha oido un ruido. Parece como si se hubiera abierto una puerta secreta.</p>
@@ -74,7 +81,16 @@ aux=`
 			<hr/>
 `;
 		this.set('misionGallinas',aux);
-
+aux=`
+<h1>Esta es la zona de los caballos</h1>
+<p>Esto deberia estar lleno de caballos, si ves algun animal que no sea un caballo recojelo y dejalo en su establo correspondiente</p>
+			<hr/>
+<h2>Para recojerlo pasa por encima</h2>
+			<hr/>
+<h2>Para soltarlo pulsa "i"</h2>
+			<hr/>
+`;
+		this.set('misionCerdo',aux);
 aux=`
 <h1>Ya tienes los huevos</h1>
 <p>Recuerda dejarlos al fondo del siguiente establo</p>
@@ -83,6 +99,14 @@ aux=`
 			<hr/>
 `;
 		this.set('missionSkull2',aux);
+aux=`
+<h1>Has encontrado un cerdo</h1>
+<p>Mira los siguientes establos y deja el cerdo en el correspondiente</p>
+			</p><img src='app/img/objd.png'/></p>
+<h2>Para dejarlo usa "i"</h2>
+			<hr/>
+`;
+		this.set('missionSkull3',aux);
 aux=`
 <h1>¡Has conseguido una llave!</h1>
 <p>Utiliza las llaves para abrir puertas</p>
@@ -182,8 +206,8 @@ aux=`
 `;
 
 aux=`
-<h1>granjero dentro</h1>
-<p>Las ovejas estan hambrientas!!!</p>
+<h1>Nueva mision</h1>
+<p>¡Las ovejas estan hambrientas!</p>
 <p>Busca pasto por fuera de la granja.</p>
 			<hr/>
 <h2>Pulsa m para abrir/cerrar esta pantalla</h2>
