@@ -48,12 +48,26 @@ aux=`
 			<hr/>
 <h2>Pulsa m para abrir/cerrar esta pantalla</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('La granja de Juanito. Ayuda a Juanito en sus labores de granja. Para comenzar acercate a él. Pulsa m para abrir o cerrar esta pantalla'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('welcome',aux);
 aux=`
 <h1>Enhorabuena</h1>
 <h2>Los huevos estan a salvo</h2>
 <h2>Dirigete a la puerta de detras tuyo</h2>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Enhorabuena. Los huevos estan a salvo. Dirígete a la puerta de detrás tuyo'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionCompleted1',aux);
 aux=`
@@ -61,6 +75,13 @@ aux=`
 <h2>El cerdo ha vuelto a su establo</h2>
 <h2>Has superado todas las pruebas</h2>
 <h2>Juanito ha quedado muy contento con tu trabajo</h2>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Enhorabuena. El cerdo ha vuelto a su establo. Has superado todas las pruebas, Juanito ha quedado muy contento con tu trabajo'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionCompleted2',aux);
 aux=`
@@ -69,6 +90,13 @@ aux=`
 			<hr/>
 <h2>Investiga la zona</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Enhorabuena. El cerdo ha vuelto a su establo. Has superado todas las pruebas, Juanito ha quedado muy contento con tu trabajo'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionSkull',aux);
 aux=`
@@ -81,6 +109,13 @@ aux=`
 			<hr/>
 <h2>Asegurate de pulsar "3" antes de recojerlos</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Esta es la zona de las gallinas. Recoje los huevos y déjalos al fondo del siguiente establo. Para recojerlos pasa por encima, Para soltarlos pulsa i. Asegúrate de pulsar 3 antes de recojerlos'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('misionGallinas',aux);
 aux=`
@@ -93,6 +128,13 @@ aux=`
 			<hr/>
 <h2>Asegurate de pulsar "5" antes de pasar recojerlo</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Esta es la zona de los caballos. Esto deberia estar lleno de caballos, si ves algun animal que no sea un caballo recojelo y déjalo en su establo correspondiente. Para recojerlo pasa por encima, Para soltarlo pulsa i. Asegúrate de pulsar 5 antes de pasar recojerlo'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('misionCerdo',aux);
 aux=`
@@ -101,6 +143,13 @@ aux=`
 			</p><img src='app/img/huevos.png'/></p>
 <h2>Para dejarlos usa "i"</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Ya tienes los huevos. Recuerda dejarlos al fondo del siguiente establo. Para dejarlos usa i'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionSkull2',aux);
 aux=`
@@ -109,6 +158,13 @@ aux=`
 			</p><img src='app/img/objd.png'/></p>
 <h2>Para dejarlo usa "i"</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Has encontrado un cerdo. Mira los siguientes establos y deja el cerdo en el correspondiente. Para dejarlo usa i'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionSkull3',aux);
 aux=`
@@ -116,6 +172,13 @@ aux=`
 <p>Utiliza las llaves para abrir puertas</p>
 			<p><img src='app/img/llave.png'/></p>
 <h2>Click izquierdo mientras mires a una puerta</h2>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Has conseguido una llave. Utiliza las llaves para abrir puertas. Click izquierdo mientras mires a una puerta'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionKill',aux);
 
@@ -135,6 +198,13 @@ aux=`
 <hr/>
 <h2>Botón izquierdo de ratón para lanzar el pasto</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Pasto conseguido. Vuelve con las ovejas y haz clic izquierdo para darselo. Botón izquierdo de ratón para lanzar el pasto'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionKill2',aux);
 aux=`
@@ -159,6 +229,13 @@ aux=`
 			<hr/>
 <h2>Sólo puedes tener un objeto por posición</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Gestión del Inventario. Los objetos se colocan en el inventario al tocarlos. Tienes 10 posiciones de inventario. Cada posicón se representa con un cuadrado en la parte superior de la pantalla. Sólo puedes tener un objeto por posición'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('multipleObjects',aux);
 aux=`
@@ -168,8 +245,15 @@ aux=`
 			<hr/>
 <h2>Asegurate de apretar la tecla "4" antes de pasar por ella</h2>
 			<hr/>
-<h2>Luego click izquiero para usarlo</h2>
+<h2>Luego click izquiero para usarla</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Puerta encontrada. Las puertas necesitan una llave para abrirse. Busca la llave por fuera de la granja. Asegúrate de apretar la tecla 4 antes de pasar por ella. Luego click izquiero para usarla'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('puertaEncontrada',aux);
 aux=`
@@ -190,6 +274,13 @@ aux=`
 			</p>
 </hr>
 <h2>Para hablar pulsa la tecla "h"</h2>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Te doy la bienvenida a mi granja. Para comenzar deberás dar comida a los perros, pulsa en la foto para saber como se dice, luego pulsa h y di la palabra comida'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('missionGetTurtle',aux);
 aux=`
@@ -203,6 +294,13 @@ aux=`
 aux=`
 <h1>Enhorabuena, has completado la primera mision. Te espero en la granja.</h1>
 <p><img src='app/img/pienso.png'/></p>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Enhorabuena, has completado la primera mision. Te espero en la granja.'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('misionComidaCompletada',aux);
 aux=`
@@ -214,13 +312,20 @@ aux=`
 			<hr/>
 <h2>1 2 3 4 5 6 7 8 9 0</h2>
 			<hr/>
-<h2>Cada posicón se representa con un cuadrado en la parte superior de la pantalla</h2>
+<h2>Cada posición se representa con un cuadrado en la parte superior de la pantalla</h2>
 			<hr/>
 <h2>Asegurate de pulsar "2" antes de pasar por encima del pasto</h2>
 			<hr/>
 <h2>Sólo puedes tener un objeto por posición</h2>
 <h2>Pulsa m para abrir/cerrar esta pantalla</h2>
 			<hr/>
+<p>
+<button onclick="
+ speechSynthesis.speak(new SpeechSynthesisUtterance('Nueva misión. Las ovejas estan hambrientas. Busca pasto por fuera de la granja. Tienes 10 posiciones de inventario. Cada posición se representa con un cuadrado en la parte superior de la pantalla. Asegurate de pulsar 2 antes de pasar por encima del pasto. Sólo puedes tener un objeto por posición. Pulsa m para abrir o cerrar esta pantalla'));
+		">
+<img src='app/img/sonido.png'/>
+			</button>
+			</p>
 `;
 		this.set('granjero1',aux);
 	}
